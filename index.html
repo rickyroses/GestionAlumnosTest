@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gestión de Alumnos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Gestión de Alumnos</h1>
+
+<div id="menu">
+    <button onclick="mostrarFormularioAlumno()">Agregar Alumno</button>
+    <button onclick="mostrarFormularioMateria()">Agregar Materia</button>
+    <button onclick="mostrarFormularioInscripcion()">Inscribir Alumno</button>
+    <button onclick="mostrarFormularioCalificaciones()">Asignar Calificaciones</button>
+    <button onclick="mostrarFormularioGrupo()">Crear Grupo</button>
+    <button onclick="mostrarPromedios()">Ver Promedios</button>
+    <button onclick="mostrarBusquedaOrdenamiento()">Búsqueda/Ordenamiento</button>
+    <button onclick="limpiarLocalStorage()">Limpiar Datos</button>
+</div>
+
+<div id="formularioAlumno" style="display: none;">
+    <h2>Agregar Alumno</h2>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre"><br><br>
+
+    <label for="apellidos">Apellidos:</label>
+    <input type="text" id="apellidos"><br><br>
+
+    <label for="edad">Edad:</label>
+    <input type="number" id="edad"><br><br>
+
+    <button onclick="agregarAlumno()">Agregar Alumno</button>
+</div>
+
+<div id="formularioMateria" style="display: none;">
+    <h2>Agregar Materia</h2>
+    <label for="nombreMateria">Nombre de la Materia:</label>
+    <input type="text" id="nombreMateria"><br><br>
+
+    <label for="profesor">Profesor:</label>
+    <input type="text" id="profesor"><br><br>
+
+    <button onclick="agregarMateria()">Agregar Materia</button>
+</div>
+
+<div id="formularioInscripcion" style="display: none;">
+    <h2>Inscribir Alumno a Materia</h2>
+    <label for="alumnoInscripcion">Alumno:</label>
+    <select id="alumnoInscripcion"></select><br><br>
+
+    <label for="materiaInscripcion">Materia:</label>
+    <select id="materiaInscripcion"></select><br><br>
+
+    <button onclick="inscribirAlumno()">Inscribir</button>
+</div>
+
+<div id="formularioCalificaciones" style="display: none;">
+    <h2>Asignar Calificaciones</h2>
+    <label for="alumnoCalificaciones">Alumno:</label>
+    <select id="alumnoCalificaciones"></select><br><br>
+
+    <label for="materiaCalificaciones">Materia:</label>
+    <select id="materiaCalificaciones"></select><br><br>
+
+    <label for="calificacion">Calificación:</label>
+    <input type="number" id="calificacion"><br><br>
+
+    <button onclick="asignarCalificacion()">Asignar Calificación</button>
+</div>
+
+<div id="formularioGrupo" style="display: none;">
+    <h2>Crear Grupo</h2>
+    <label for="nombreGrupo">Nombre del Grupo:</label>
+    <input type="text" id="nombreGrupo"><br><br>
+
+    <label for="alumnosGrupo">Alumnos:</label>
+    <select id="alumnosGrupo" multiple></select><br><br>
+
+    <button onclick="crearGrupo()">Crear Grupo</button>
+</div>
+
+<div id="listaAlumnos"> 
+    <h2>Lista de Alumnos</h2>
+    <ul id="alumnos"></ul>
+</div>
+
+<div id="listaMaterias">
+    <h2>Lista de Materias</h2>
+    <ul id="materias"></ul>
+</div>
+
+<div id="listaAlumnosInscritos">
+    <h2>Alumnos Inscritos en Materias</h2>
+    <ul id="alumnosInscritos"></ul>
+</div>
+
+<div id="listaCalificaciones">
+    <h2>Lista de Calificaciones</h2>
+    <ul id="calificaciones"></ul>
+</div>
+
+<div id="promedios" style="display: none;"></div>
+    <h2>Promedios de Alumnos</h2>
+    <ul id="listaPromedios"></ul>
+</div>
+
+<div id="busquedaOrdenamiento" style="display: none;">
+    <h2>Búsqueda y Ordenamiento</h2>
+
+    <label for="buscarNombre">Buscar por nombre:</label>
+    <input type="text" id="buscarNombre">
+    <button onclick="buscarPorNombreInterfaz()">Buscar</button><br><br>
+
+    <label for="buscarApellido">Buscar por apellido:</label>
+    <input type="text" id="buscarApellido">
+    <button onclick="buscarPorApellidoInterfaz()">Buscar</button><br><br>
+
+    <label for="buscarGrupo">Buscar por grupo:</label>
+    <input type="text" id="buscarGrupo">
+    <button onclick="buscarPorGrupoInterfaz()">Buscar</button><br><br>
+
+    <label for="ordenarCalificacion">Ordenar por calificación:</label>
+    <select id="ordenarCalificacion">
+        <option value="asc">Ascendente</option>
+        <option value="desc">Descendente</option>
+    </select>
+    <button onclick="ordenarPorCalificacionInterfaz()">Ordenar</button><br><br>
+
+    <label for="ordenarEdad">Ordenar por edad:</label>
+    <select id="ordenarEdad">
+        <option value="asc">Ascendente</option>
+        <option value="desc">Descendente</option>
+    </select>
+    <button onclick="ordenarPorEdadInterfaz()">Ordenar</button><br><br>
+
+    <div id="resultadosBusqueda"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

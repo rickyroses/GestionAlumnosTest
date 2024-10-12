@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#formularioAlumno label,
+#formularioMateria label,
+#formularioInscripcion label,
+#formularioCalificaciones label,
+#formularioGrupo label,
+#busquedaOrdenamiento label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    /* Verde */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+input,
+select {
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+#menu button {
+    margin: 5px;
+}
+
+#formularioAlumno,
+#formularioMateria,
+#formularioInscripcion,
+#formularioCalificaciones,
+#formularioGrupo,
+#promedios,
+#busquedaOrdenamiento {
+    display: none;
+}
